@@ -11,7 +11,7 @@
     <tags>mallenom standard</tags>
     <releaseNotes>First release note</releaseNotes>
     <dependencies>
-      <dependency id="mallenom.research.A" />
+      <dependency id="mallenom.research.A" version="1.0.0" />
     </dependencies>
   </metadata>
   <files>
