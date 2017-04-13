@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mallenom.research", "mallenom.research.prj\mallenom.research.csproj", "{26B8B2AC-7863-4C69-855A-46437D923D66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mallenom.research.A", "mallenom.research.A.prj\mallenom.research.A.csproj", "{44DB3969-77A4-45C6-8F9E-A7A9A75092FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mallenom.research.B", "mallenom.research.B.prj\mallenom.research.B.csproj", "{B729586E-CB7F-4DAF-96E4-45A445337D9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{26B8B2AC-7863-4C69-855A-46437D923D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26B8B2AC-7863-4C69-855A-46437D923D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26B8B2AC-7863-4C69-855A-46437D923D66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44DB3969-77A4-45C6-8F9E-A7A9A75092FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44DB3969-77A4-45C6-8F9E-A7A9A75092FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44DB3969-77A4-45C6-8F9E-A7A9A75092FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44DB3969-77A4-45C6-8F9E-A7A9A75092FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B729586E-CB7F-4DAF-96E4-45A445337D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B729586E-CB7F-4DAF-96E4-45A445337D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B729586E-CB7F-4DAF-96E4-45A445337D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B729586E-CB7F-4DAF-96E4-45A445337D9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

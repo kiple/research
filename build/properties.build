@@ -6,6 +6,7 @@
     <SolutionFilename>mallenom.research.sln</SolutionFilename>
     <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
     <Platform Condition="'$(Platform)'==''">Any CPU</Platform>
+    <CurrentBranch>master</CurrentBranch>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -24,8 +25,8 @@
 
   <!-- Имена nuget-пакетов -->
   <ItemGroup>
-    <NugetPkg Include="mallenom.researchA" />
-    <NugetPkg Include="mallenom.researchB" />
+    <NugetPkg Include="mallenom.research.A" />
+    <NugetPkg Include="mallenom.research.B" />
   </ItemGroup>
 
 </Project>

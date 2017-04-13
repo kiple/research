@@ -3,6 +3,8 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
+    <NugetSrv>https://www.myget.org/F/mallenom/api/v2/package</NugetSrv>
+    <ApiKey>af678f3c-c91e-420e-98b0-1d421a8506e4</ApiKey>
     <NugetPath Condition="'$(NugetPath)'==''">$([System.IO.Path]::Combine('$(SourcesDirectory)', '.nuget', 'NuGet.exe'))</NugetPath>
     <NuspecDirectory>$([System.IO.Path]::Combine('$(BuildDirectory)', 'nuget'))\</NuspecDirectory>
     <VersionSuffix Condition="'$(CurrentBranch)'!='refs/heads/master' AND '$(CurrentBranch)'!='master'">-$(ConfigurationVC)</VersionSuffix>
