@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="BuildRelease" Properties="CompileDependsOn">
+
+	<Import Project="properties.build"/>
+
+	<Target Name="VersionFileExists" Condition="!Exists('$(RootDirectory)$(VersionFileName)')">
+		<Error Text="Не обнаружен файл $(VersionFileName)!"></Error>
+	</Target>
+
+	<Target Name="VersionBuildFileExists" Condition="!Exists('$(BuildDirectory)$(VersionBuildFileName)')">
+		<Error Text="Не обнаружен файл $(VersionBuildFileName)!"></Error>
+	</Target>
+
+	<!-- Создаем файл в корневой директории с полной версией -->
+	<Target Name="CreateFile">
+		<ItemGroup>
+			<Line Include="line01">
+				<Text>$(Major).$(Minor).$(Build).$(Revision)-$(ConfigurationVC)[$(Hash)]</Text>
+			</Line>
+			<Line Include="line02">
+				<Text>$(DiagMajor).$(DiagMinor).$(DiagBuild).$(Revision)-$(DiagConfigurationVC)[$(Hash)] // Диагностика</Text>
+			</Line>
+			<LineText Include="%(Line.Text)" />
+		</ItemGroup>
+
+		<WriteLinesToFile
+			File="$(RootDirectory)$(ActualVersionFileName)"
+			Lines="@(LineText)"
+			Overwrite="true" />
+	</Target>
+
+	<Target Name="CreateVersionFile" DependsOnTargets="VersionFileExists; VersionBuildFileExists; CreateFile" />
+
+	<PropertyGroup>
+		<FullName>$(TEMP)\arscis.hwdiagnostics-$(DiagMajor).$(DiagMinor).$(DiagBuild).$(Revision)-$(DiagConfigurationVC)</FullName>
+		<OutputZipHWFileName>$(MSBuildProjectDirectory)\arscis.hwdiagnostics-$(DiagMajor).$(DiagMinor).$(DiagBuild).$(Revision)-$(DiagConfigurationVC).7z</OutputZipHWFileName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<BinFiles Include="$(DiagManualDir)\arscis.diagnostic.chm" />
+		<BinFiles Include="$(DiagManualDir)\arscis.diagnostic.pdf" />
+		<BinFiles Include="$(DiagPrjDirectory)\bin\Release\*.dll"/>
+		<BinFiles Include="$(DiagPrjDirectory)\bin\Release\*.exe"/>
+		<BinFiles Include="$(DiagPrjDirectory)\bin\Release\*.sys"/>
+	</ItemGroup>
+	
+	<!--Создание архива Диагностики -->
+	<Target Name="Create7ZipTarget">
+		<Copy SourceFiles="@(BinFiles)" DestinationFolder="$(FullName)" />
+		<Exec Command="$(ZipExe) a $(OutputZipHWFileName) $(FullName)" />
+		<RemoveDir Directories="$(FullName)" />
+	</Target>
+</Project>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mallenom.standard</id>
+    <authors>Mallenom Systems</authors>
+    <description>Project template library</description>
+    <language>en-US</language>
+    <version>0.0.0</version>
+    <licenseUrl>http://www.mallenom.ru</licenseUrl>
+    <projectUrl>http://www.mallenom.ru</projectUrl>
+    <tags>mallenom standard</tags>
+    <releaseNotes>First release note</releaseNotes>
+    <dependencies>
+      <dependency id="mallenom.framework" version="2.7.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\src\mallenom.standard.prj\bin\Release\mallenom.standard.*" target="lib\net45" />
+    <file src="..\..\src\mallenom.standard.cpp.prj\bin\x86\Release\mallenom.standard.cpp.*" target="lib\net45" />
+    <file src="..\..\src\mallenom.standard.cpp.prj\bin\x64\Release\mallenom.standard.cpp.*" target="lib_x64\net45" />
+  </files>
+</package>
